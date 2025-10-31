@@ -430,8 +430,10 @@
         /* Gallery Section */
         #gallery {
             background: white;
+            position: relative;
         }
 
+        /* Desktop Grid Layout */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -454,6 +456,86 @@
 
         .gallery-item:hover img {
             transform: scale(1.1);
+        }
+
+        /* Mobile Carousel */
+        .gallery-carousel {
+            display: none;
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 300px;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--dark);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary);
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--primary);
+            transform: scale(1.2);
         }
 
         /* Lightbox */
@@ -710,6 +792,15 @@
             .hero-btns .btn {
                 width: 200px;
             }
+
+            /* Switch to carousel on mobile */
+            .gallery-grid {
+                display: none;
+            }
+            
+            .gallery-carousel {
+                display: block;
+            }
         }
 
         @media (max-width: 576px) {
@@ -847,11 +938,11 @@
                         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="E-Commerce Platform">
                     </div>
                     <div class="project-info">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-stack e-commerce solution with React frontend, Node.js backend, and AI-powered product recommendations.</p>
+                        <h3>College Department Interface</h3>
+                        <p>A full-stack web application for managing college department activities, including course management, student enrollment, and faculty collaboration.</p>
                         <div class="project-links">
-                            <a href="#" class="btn">View Demo</a>
-                            <a href="#" class="btn btn-outline">Source Code</a>
+                            <a href="https://melhanweb07.github.io/interface/" class="btn">View Demo</a>
+                            <a href="https://melhanweb07.github.io/interface/" class="btn btn-outline">Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -860,11 +951,11 @@
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="AI Chatbot">
                     </div>
                     <div class="project-info">
-                        <h3>AI-Powered Chatbot</h3>
-                        <p>An intelligent chatbot using OpenAI API with custom prompt engineering for enhanced user interactions.</p>
+                        <h3>Attendance Tracker App</h3>
+                        <p>An Attendance Tracking application for monitoring student attendance and engagement.</p>
                         <div class="project-links">
-                            <a href="#" class="btn">View Demo</a>
-                            <a href="#" class="btn btn-outline">Source Code</a>
+                            <a href="https://melhanweb07.github.io/attendance-system/" class="btn">View Demo</a>
+                            <a href="https://melhanweb07.github.io/attendance-system/" class="btn btn-outline">Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -873,11 +964,11 @@
                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Fitness App">
                     </div>
                     <div class="project-info">
-                        <h3>Fitness Tracking App</h3>
-                        <p>A mobile application for tracking workouts and nutrition with personalized AI-generated fitness plans.</p>
+                        <h3>RunBlitz</h3>
+                        <p>A web application for tracking live cricket scores.</p>
                         <div class="project-links">
-                            <a href="#" class="btn">View Demo</a>
-                            <a href="#" class="btn btn-outline">Source Code</a>
+                            <a href="https://melhanweb07.github.io/runblitz/" class="btn">View Demo</a>
+                            <a href="https://github.com/melhanweb07/runblitz" class="btn btn-outline">Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -886,11 +977,11 @@
                         <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Project Management Tool">
                     </div>
                     <div class="project-info">
-                        <h3>Project Management Tool</h3>
-                        <p>A collaborative project management platform with real-time updates, task tracking, and team communication.</p>
+                        <h3>Student Management System</h3>
+                        <p>A comprehensive platform for managing student information, enrollment, and academic progress.</p>
                         <div class="project-links">
-                            <a href="#" class="btn">View Demo</a>
-                            <a href="#" class="btn btn-outline">Source Code</a>
+                            <a href="https://melhanweb07.github.io/StudentData/" class="btn">View Demo</a>
+                            <a href="https://melhanweb07.github.io/StudentData/" class="btn btn-outline">Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -899,11 +990,11 @@
                         <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Data Visualization Dashboard">
                     </div>
                     <div class="project-info">
-                        <h3>Data Visualization Dashboard</h3>
-                        <p>An interactive dashboard for visualizing complex datasets with AI-powered insights and predictions.</p>
+                        <h3>Mindwell</h3>
+                        <p>A mental wellness platform offering personalized resources and support.</p>
                         <div class="project-links">
-                            <a href="#" class="btn">View Demo</a>
-                            <a href="#" class="btn btn-outline">Source Code</a>
+                            <a href="https://melhanweb07.github.io/Flowminds/" class="btn">View Demo</a>
+                            <a href="https://melhanweb07.github.io/Flowminds/" class="btn btn-outline">Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -931,23 +1022,23 @@
             <div class="achievements-grid">
                 <div class="achievement-card animate">
                     <i class="fas fa-trophy"></i>
-                    <h3>Best Project Award</h3>
-                    <p>Awarded for in Project Expo 2025 @CAHCET-AI&DS.</p>
+                    <h3>Award in Project Expo 2025</h3>
+                    <p>Awarded for innovative project showcasing AI capabilities and IoT @CAHCET-AI&DS.</p>
                 </div>
                 <div class="achievement-card animate">
                     <i class="fas fa-certificate"></i>
-                    <h3>Udemy Certification</h3>
-                    <p>Have completed various courses on web development and design.</p>
+                    <h3>Udemy Certificate</h3>
+                    <p>Completed a comprehensive course on web development.</p>
                 </div>
                 <div class="achievement-card animate">
                     <i class="fas fa-medal"></i>
-                    <h3>Zonal Winners In Anna University Cricket Tournament</h3>
-                    <p>Winner in AU Zonal 2025 & Runner In AU Zonal 2024</p>
+                    <h3>Won AU Zonal Championship</h3>
+                    <p>Winner of AU zonal Cricket Championship 2025 and Runner In AU zonal Cricket Championship 2024.</p>
                 </div>
                 <div class="achievement-card animate">
                     <i class="fas fa-award"></i>
                     <h3>UI/UX Design Excellence</h3>
-                    <p>Complete the UI & UX design certification through Naan Mudhalvan Course</p>
+                    <p>Complete the UI/UX Design course Certification through Naan Mudhalvan.</p>
                 </div>
                 <div class="achievement-card animate">
                     <i class="fas fa-graduation-cap"></i>
@@ -967,6 +1058,8 @@
     <section id="gallery">
         <div class="container">
             <h2>Personal Gallery</h2>
+            
+            <!-- Desktop Grid Layout -->
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80" alt="Cricket Match">
@@ -978,13 +1071,46 @@
                     <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Team Collaboration">
                 </div>
                 <div class="gallery-item">
-                    <img src="mel lap.jpg" alt="Project Presentation">
+                    <img src="mel cric.jpg" alt="Project Presentation">
                 </div>
                 <div class="gallery-item">
-                    <img src="mel sgc.jpg" alt="Code Review">
+                    <img src="mel lap.jpg" alt="Code Review">
                 </div>
                 <div class="gallery-item">
-                    <img src="mel c.jpg" alt="Fitness Training">
+                    <img src="mel sgc.jpg" alt="Fitness Training">
+                </div>
+            </div>
+            
+            <!-- Mobile Carousel -->
+            <div class="gallery-carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80" alt="Cricket Match">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Coding Session">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Team Collaboration">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="mel cric.jpg" alt="Project Presentation">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="mel lap.jpg" alt="Code Review">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="mel sgc.jpg" alt="Fitness Training">
+                    </div>
+                </div>
+                <button class="carousel-btn prev-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <!-- Indicators will be generated by JavaScript -->
                 </div>
             </div>
         </div>
@@ -1007,20 +1133,20 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>melhandev07@gmail.com</span>
+                            <span>hello@mohamedmelhan.com</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>9600159063</span>
+                            <span>+1 (555) 123-4567</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Kilvisharam-Ranipet-Tamilnadu, India</span>
+                            <span>Chennai, India</span>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/mohamed-melhan-k-o-1bb3872a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/melhanweb07" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     </div>
@@ -1228,6 +1354,103 @@
                 if (link.getAttribute('href').substring(1) === current) {
                     link.classList.add('active');
                 }
+            });
+        });
+
+        // Gallery Carousel Functionality
+        const carouselTrack = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carouselIndicators = document.getElementById('carouselIndicators');
+        const slides = document.querySelectorAll('.carousel-slide');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Create indicators
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('div');
+            indicator.classList.add('indicator');
+            if (i === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => goToSlide(i));
+            carouselIndicators.appendChild(indicator);
+        }
+        
+        // Update carousel position
+        function updateCarousel() {
+            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update active indicator
+            document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        // Go to specific slide
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+        
+        // Next slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Previous slide
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Event listeners for buttons
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        
+        // Auto-advance carousel (optional)
+        let carouselInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-advance on hover
+        const carousel = document.querySelector('.gallery-carousel');
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(carouselInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            carouselInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Touch swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+        
+        carouselTrack.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        carouselTrack.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            
+            if (startX - endX > swipeThreshold) {
+                // Swipe left - next slide
+                nextSlide();
+            } else if (endX - startX > swipeThreshold) {
+                // Swipe right - previous slide
+                prevSlide();
+            }
+        }
+        
+        // Lightbox for carousel images
+        slides.forEach(slide => {
+            slide.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = slide.querySelector('img').src;
             });
         });
     </script>
